@@ -11,6 +11,22 @@ root.render(
   </React.StrictMode>
 );
 
+// もし "Error" ボタンを押したら、例外処理を発生させて、"/public/Error.html"ページに遷移する。
+if (document.getElementById('error')) {
+  document.getElementById('error').addEventListener('click', () => {
+    throw new Error('Error button clicked!');
+  });
+}
+
+// もし "Hello" ボタンを押したら、"/public/Hello.html"ページに遷移する。
+if (document.getElementById('hello')) {
+  document.getElementById('hello').addEventListener('click', () => {
+    window.location.href = 'Hello.html';
+  });
+}
+
+
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
